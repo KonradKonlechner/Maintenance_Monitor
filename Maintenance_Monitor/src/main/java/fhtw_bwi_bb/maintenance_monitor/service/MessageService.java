@@ -11,4 +11,10 @@ public class MessageService {
         return this.messageText;
     }
 
+    //method for setting new current message
+    public void setNewMessage(String newMessage) {
+
+            this.messageText = newMessage.replace("+", " ");
+
+    }
 }
