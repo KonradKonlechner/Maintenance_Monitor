@@ -1,9 +1,7 @@
 package fhtw_bwi_bb.maintenance_monitor.controller;
 
 import fhtw_bwi_bb.maintenance_monitor.service.MessageService;
-import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
-import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
