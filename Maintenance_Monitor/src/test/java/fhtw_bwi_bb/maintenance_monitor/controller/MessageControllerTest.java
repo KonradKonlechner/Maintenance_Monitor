@@ -39,7 +39,11 @@ class MessageControllerTest {
         Mockito.verify(messageService, times(1)).setNewMessage("ASD");
     }
 
+    @Test
+    void shouldCallResetMessageFromService() {
 
+        messageController.resetMessage();
 
-
+        Mockito.verify(messageService, times(1)).resetMessage();
+    }
 }

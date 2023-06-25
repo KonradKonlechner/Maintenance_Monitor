@@ -25,4 +25,11 @@ public class MessageController {
         messageService.setNewMessage(message);
         return confirmText;
     }
+
+    @PutMapping("/message/reset")
+    public String resetMessage() {
+
+        messageService.resetMessage();
+        return confirmText;
+    }
 }

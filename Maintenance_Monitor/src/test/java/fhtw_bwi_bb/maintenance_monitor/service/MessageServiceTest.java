@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MessageServiceTest {
 
@@ -35,5 +35,23 @@ class MessageServiceTest {
         assertEquals(messageService.getCurrentMessage(),expected);
     }
 
+    @Test
+    void shouldLeaveMessageUnchanged() {
+        messageService.resetMessage();
 
+        final String resultingMessage = messageService.getCurrentMessage();
+
+        assertEquals(resultingMessage, defaultMessageText);
+    }
+
+    @Test
+    void shouldResetMessage() {
+
+        messageService.setNewMessage("Some other Message");
+        messageService.resetMessage();
+
+        final String resultingMessage = messageService.getCurrentMessage();
+
+        assertEquals(resultingMessage, defaultMessageText);
+    }
 }
