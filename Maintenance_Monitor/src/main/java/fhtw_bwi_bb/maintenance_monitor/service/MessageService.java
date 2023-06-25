@@ -10,7 +10,8 @@ public class MessageService {
     private String currentMessage = defaultMessage;
 
     public String getCurrentMessage() {
-        return this.messageText;
+
+        return this.currentMessage;
     }
 
     //method for setting new current message
