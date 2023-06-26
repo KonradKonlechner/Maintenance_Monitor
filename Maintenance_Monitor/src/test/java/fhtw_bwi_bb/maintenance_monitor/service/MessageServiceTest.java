@@ -14,7 +14,7 @@ class MessageServiceTest {
 
 
     @BeforeEach
-    private void setUp() {
+    public void setUp() {
         messageService = new MessageService();
     }
 
@@ -32,7 +32,7 @@ class MessageServiceTest {
 
         messageService.setNewMessage(input);
 
-        assertEquals(messageService.getCurrentMessage(),expected);
+        assertEquals(messageService.getCurrentMessage(), expected);
     }
 
     @Test
