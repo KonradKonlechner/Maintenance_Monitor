@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/api",method = {RequestMethod.GET,RequestMethod.PUT})
+@RequestMapping(path = "/api", method = {RequestMethod.GET, RequestMethod.PUT})
 public class MessageController {
 
     private MessageService messageService;
@@ -18,10 +18,10 @@ public class MessageController {
         return messageService.getCurrentMessage();
     }
 
-
     //create mapping, calling service method
-    @PutMapping("/message/set/{message}")
-    public String setMessage(@PathVariable String message) {
+    @PutMapping("/message/set")
+    public String setMessage(@RequestParam(name = "m") String message) {
+
         messageService.setNewMessage(message);
         return confirmText;
     }
